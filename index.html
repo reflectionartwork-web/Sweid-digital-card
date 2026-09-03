@@ -13,11 +13,12 @@
         :root {
             --dark-bg: #060000;
             --light-cream-bg: #FCF9F2; /* أبيض كريمي فاتح متناسق */
-            --brown-bg: #3E2723;       /* لون بني راقي */
-            --brown-dark: #261612;     /* بني داكن للتدرج */
+            --brown-bg: #060000;       /* لون بني راقي */
+            --brown-dark: #060000;     /* بني داكن للتدرج */
             --gold-accent: #C59E50;    /* لمسة ذهبية أكثر تناسقاً ودفئاً مع البني */
             --text-cream: #FCF9F2;     /* نص أبيض كريمي */
             --text-dark: #2a1a08;
+            --marlboro-red: #e1251b;   /* أحمر مالبورو */
         }
 
         * {
@@ -74,8 +75,8 @@
 
         /* تصغير اللوغو بنسبة 15% */
         .main-logo {
-            width: 80%;
-            max-width: 220px; 
+            width: 85%;
+            max-width: 245px; 
             height: auto;
             object-fit: contain;
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
@@ -88,7 +89,7 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 5;
-            width: 138px;
+            width: 160px;
         }
 
         .coffee-beans {
@@ -266,34 +267,59 @@
             color: var(--brown-dark);
         }
 
-        /* --- القسم السفلي للبراندات --- */
+        /* --- القسم السفلي للبراندات الجديد --- */
         .bottom-section {
-            background-color: var(--dark-bg);
-            padding: 40px 20px;
+            display: flex;
+            margin-top: 10px;
+            min-height: 150px; /* تكبير حجم القسم */
+            position: relative;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+        }
+
+        .brand-half {
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 40px;
-            margin-top: 10px;
+            padding: 25px 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* الجزء اليمين (نظراً لأن الاتجاه RTL، العنصر الأول سيكون على اليمين) */
+        .plains-side {
+            background-color: var(--marlboro-red);
+        }
+
+        /* الجزء اليسار */
+        .alsuhoul-side {
+            background-color: var(--dark-bg);
+        }
+
+        /* الخط الذهبي الفاصل في المنتصف */
+        .brand-separator {
+            width: 3px;
+            background-color: var(--gold-accent);
+            z-index: 5;
         }
 
         .sub-brand {
-            height: 45px;
+            height: 90px; /* تكبير اللوغو بشكل متناسب مع القسم الجديد */
             width: auto;
-            max-width: 140px;
+            max-width: 180px;
             object-fit: contain;
-            opacity: 0.9;
+            opacity: 0.95;
             animation: float-logo 4s ease-in-out infinite;
         }
         
-        .sub-brand:nth-child(2) {
-            animation-delay: 2s;
+        .alsuhoul-side .sub-brand {
+            animation-delay: 2s; /* تأخير حركة البراند الثاني */
         }
 
         @keyframes float-logo {
-            0% { transform: translateY(0px); opacity: 0.85; }
+            0% { transform: translateY(0px); opacity: 0.9; }
             50% { transform: translateY(-6px); opacity: 1; }
-            100% { transform: translateY(0px); opacity: 0.85; }
+            100% { transform: translateY(0px); opacity: 0.9; }
         }
     </style>
 </head>
@@ -350,18 +376,26 @@
                 <span class="phone-number" dir="ltr">+963 993 316 550</span>
             </a>
 
-            <!-- خانة البورتفوليو (برابط جوجل درايف المحدث) -->
+            <!-- خانة بورتفوليو السهول -->
             <a href="https://drive.google.com/drive/folders/1kX8uQ94AuulKp5hJ8vj1dqBwrBB2IcPb?usp=drive_link" target="_blank" class="styled-box" style="margin-top: 5px;">
                 <div class="icon-title">
-                    <i class="fab fa-google-drive"></i> ملف منتجاتنا - Our Products
+                    <i class="fab fa-google-drive"></i> Alsuhoul Products
                 </div>
-                <p>اضغط هنا لعرض المنتجات</p>
+                <p>اضغط هنا لعرض منتجات السهول</p>
+            </a>
+
+            <!-- خانة بورتفوليو بلينز الجديدة -->
+            <a href="https://drive.google.com/drive/folders/1qElQi3eLLgNVerDqJCE1eMHi4G6yczeG?usp=drive_link" target="_blank" class="styled-box">
+                <div class="icon-title">
+                    <i class="fab fa-google-drive"></i> Plains Products
+                </div>
+                <p>اضغط هنا لعرض منتجات بلينز</p>
             </a>
 
             <!-- عنوان تواصل معنا -->
             <h2 class="contact-us-title">Contact Us <span>|</span> تواصل معنا</h2>
 
-            <!-- الأيقونات المربعة المجتمعة تحت العنوان (فيسبوك، انستغرام، واتساب، موقع) بإطار (Stroke) -->
+            <!-- الأيقونات المربعة المجتمعة تحت العنوان -->
             <div class="social-large-icons">
                 <a href="https://www.facebook.com/share/1D28Hf1pSC/" target="_blank" class="social-box"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/alsuhoul.sy?igsi=emFtbXRxamwxcTJr" target="_blank" class="social-box"><i class="fab fa-instagram"></i></a>
@@ -376,10 +410,20 @@
 
         </main>
 
-        <!-- القسم السفلي الداكن للبراندات الفرعية -->
+        <!-- القسم السفلي للبراندات (مقسم إلى قسمين) -->
         <footer class="bottom-section">
-            <img src="2.png" alt="PLAINS Logo" class="sub-brand">
-            <img src="1.png" alt="Alsuhoul Logo" class="sub-brand">
+            <!-- الجزء اليمين (احمر مالبورو + لوغو Plains) -->
+            <div class="brand-half plains-side">
+                <img src="2.png" alt="PLAINS Logo" class="sub-brand">
+            </div>
+            
+            <!-- الخط الذهبي الفاصل -->
+            <div class="brand-separator"></div>
+
+            <!-- الجزء اليسار (أسود داكن + لوغو السهول) -->
+            <div class="brand-half alsuhoul-side">
+                <img src="1.png" alt="Alsuhoul Logo" class="sub-brand">
+            </div>
         </footer>
 
     </div>
