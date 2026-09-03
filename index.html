@@ -15,7 +15,7 @@
             --light-cream-bg: #FCF9F2; /* أبيض كريمي فاتح متناسق */
             --brown-bg: #3E2723;       /* لون بني راقي */
             --brown-dark: #261612;     /* بني داكن للتدرج */
-            --gold-accent: #d4af37;    /* اللمسة الذهبية */
+            --gold-accent: #C59E50;    /* لمسة ذهبية أكثر تناسقاً ودفئاً مع البني */
             --text-cream: #FCF9F2;     /* نص أبيض كريمي */
             --text-dark: #2a1a08;
         }
@@ -74,14 +74,14 @@
 
         /* تصغير اللوغو بنسبة 15% */
         .main-logo {
-            width: 75%;
-            max-width: 212px; 
+            width: 80%;
+            max-width: 220px; 
             height: auto;
             object-fit: contain;
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
         }
 
-        /* --- حركة حبات البن وتكبيرها بنسبة 15% --- */
+        /* --- حركة حبات البن --- */
         .beans-wrapper {
             position: absolute;
             bottom: -55px;
@@ -117,7 +117,7 @@
         /* تصميم الخانات باللون البني مع اللمسة الذهبية والنص الكريمي */
         .styled-box {
             background: linear-gradient(135deg, var(--brown-bg), var(--brown-dark));
-            border: 1px solid rgba(212, 175, 55, 0.4);
+            border: 1px solid rgba(197, 158, 80, 0.4);
             border-right: 4px solid var(--gold-accent);
             border-radius: 12px;
             padding: 15px;
@@ -140,7 +140,7 @@
         
         .styled-box:hover {
             border-color: var(--gold-accent);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 6px 20px rgba(197, 158, 80, 0.2);
         }
 
         .styled-box h3 {
@@ -185,42 +185,6 @@
             color: var(--gold-accent);
         }
 
-        /* --- أيقونات السوشيال ميديا الكبيرة --- */
-        .social-large-icons {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin: 15px 0;
-        }
-
-        .social-box {
-            background: linear-gradient(135deg, var(--brown-bg), var(--brown-dark));
-            border: 1px solid rgba(212, 175, 55, 0.5);
-            width: 65px;
-            height: 65px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 15px;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            transition: transform 0.3s;
-        }
-
-        .social-box i {
-            color: var(--gold-accent);
-            font-size: 32px;
-            transition: color 0.3s;
-        }
-
-        .social-box:hover {
-            transform: scale(1.08);
-            border-color: var(--gold-accent);
-        }
-        .social-box:hover i {
-            color: var(--text-cream);
-        }
-
         /* --- عنوان تواصل معنا --- */
         .contact-us-title {
             text-align: center;
@@ -234,40 +198,41 @@
             color: var(--gold-accent);
         }
 
-        /* --- الأيقونات الدائرية السريعة --- */
-        .circle-icons {
+        /* --- الأيقونات المربعة المجتمعة (السوشيال والواتساب واللوكيشن) --- */
+        .social-large-icons {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 15px; /* مسافة بين الأيقونات */
             margin-bottom: 15px;
+            flex-wrap: wrap; /* للسماح بالتوزيع الجيد في الشاشات الصغيرة */
         }
 
-        .circle-icon {
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--brown-bg), var(--brown-dark));
-            border: 2px solid var(--gold-accent);
+        .social-box {
+            background: transparent; /* جعل التعبئة شفافة (بدون Fill) */
+            border: 2px solid var(--gold-accent); /* الإطار الخارجي (Stroke) */
+            width: 60px;
+            height: 60px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 30px;
+            border-radius: 12px; /* جعلها بشكل مربع بحواف منحنية قليلاً */
             text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s, background 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, background 0.3s;
         }
-        
-        .circle-icon i {
+
+        .social-box i {
             color: var(--gold-accent);
+            font-size: 28px;
             transition: color 0.3s;
         }
 
-        .circle-icon:hover {
-            transform: translateY(-5px);
-            background: var(--gold-accent);
+        .social-box:hover {
+            transform: translateY(-5px); /* رفع للاعلى عند التمرير */
+            background: var(--gold-accent); /* تعبئة باللون الذهبي عند التمرير */
         }
-        .circle-icon:hover i {
-            color: var(--brown-dark);
+        .social-box:hover i {
+            color: var(--brown-dark); /* تغيير لون الأيقونة */
         }
 
         /* --- زر VCard --- */
@@ -310,7 +275,6 @@
             align-items: center;
             gap: 40px;
             margin-top: 10px;
-            /* لم نعد بحاجة إلى border-radius هنا لأن الـ overflow: hidden في الحاوية الرئيسية يتكفل بالأمر */
         }
 
         .sub-brand {
@@ -354,59 +318,55 @@
         <main class="details-section">
             
             <!-- خانة العنوان -->
-            <a href="https://maps.app.goo.gl/3ZhccPdzeJtgk6YQ7" target="_blank" class="styled-box">
+            <a href="https://maps.app.goo.gl/qDrXbGYczfqfwRQ7A" target="_blank" class="styled-box">
                 <div class="icon-title">
-                    <i class="fas fa-map-marker-alt"></i> العنوان
+                    <i class="fa-solid fa-location-dot"></i> العنوان
                 </div>
                 <p>سوريا - حلب - المدينة الصناعية (الشيخ نجار) - القطاع الثالث</p>
                 <p class="en-text">Syria - Aleppo - Industrial City (Sheikh Najjar) - Sector 3</p>
             </a>
 
-            <!-- خانة البريد الإلكتروني -->
-            <a href="mailto:sweid-co@gmail.com" class="styled-box">
+            <!-- خانة البريد الإلكتروني المحدثة -->
+            <a href="mailto:sweid.co.sy@gmail.com" class="styled-box">
                 <div class="icon-title">
                     <i class="fas fa-envelope"></i> البريد الإلكتروني
                 </div>
-                <span class="phone-number">sweid-co@gmail.com</span>
+                <span class="phone-number">sweid.co.sy@gmail.com</span>
             </a>
 
-            <!-- خانة رقم دمشق -->
+            <!-- خانة مبيعات دمشق -->
             <a href="https://wa.me/963993316551" target="_blank" class="styled-box">
                 <div class="icon-title">
-                    <i class="fab fa-whatsapp"></i> فرع دمشق (Damascus Branch)
+                    <i class="fab fa-whatsapp"></i> مبيعات دمشق (Damascus Sales)
                 </div>
                 <span class="phone-number" dir="ltr">+963 993 316 551</span>
             </a>
 
-            <!-- خانة رقم حلب -->
+            <!-- خانة مبيعات حلب -->
             <a href="https://wa.me/963993316550" target="_blank" class="styled-box">
                 <div class="icon-title">
-                    <i class="fab fa-whatsapp"></i> فرع حلب (Aleppo Branch)
+                    <i class="fab fa-whatsapp"></i> مبيعات حلب (Aleppo Sales)
                 </div>
                 <span class="phone-number" dir="ltr">+963 993 316 550</span>
             </a>
 
-            <!-- خانة البورتفوليو -->
-            <a href="https://drive.google.com/drive/folders/YOUR_GOOGLE_DRIVE_LINK" target="_blank" class="styled-box" style="margin-top: 5px;">
+            <!-- خانة البورتفوليو (برابط جوجل درايف المحدث) -->
+            <a href="https://drive.google.com/drive/folders/1kX8uQ94AuulKp5hJ8vj1dqBwrBB2IcPb?usp=drive_link" target="_blank" class="styled-box" style="margin-top: 5px;">
                 <div class="icon-title">
                     <i class="fab fa-google-drive"></i> ملف منتجاتنا - Our Products
                 </div>
                 <p>اضغط هنا لعرض المنتجات</p>
             </a>
 
-            <!-- أيقونات السوشيال ميديا الكبيرة -->
-            <div class="social-large-icons">
-                <a href="https://www.facebook.com/share/1D28Hf1pSC/" target="_blank" class="social-box"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" target="_blank" class="social-box"><i class="fab fa-instagram"></i></a>
-            </div>
-
             <!-- عنوان تواصل معنا -->
             <h2 class="contact-us-title">Contact Us <span>|</span> تواصل معنا</h2>
 
-            <!-- الأيقونات الدائرية السريعة -->
-            <div class="circle-icons">
-                <a href="https://wa.me/963993316550" target="_blank" class="circle-icon"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://maps.app.goo.gl/3ZhccPdzeJtgk6YQ7" target="_blank" class="circle-icon"><i class="fas fa-map-marked-alt"></i></a>
+            <!-- الأيقونات المربعة المجتمعة تحت العنوان (فيسبوك، انستغرام، واتساب، موقع) بإطار (Stroke) -->
+            <div class="social-large-icons">
+                <a href="https://www.facebook.com/share/1D28Hf1pSC/" target="_blank" class="social-box"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/alsuhoul.sy?igsi=emFtbXRxamwxcTJr" target="_blank" class="social-box"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/963993316550" target="_blank" class="social-box"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://maps.app.goo.gl/qDrXbGYczfqfwRQ7A" target="_blank" class="social-box"><i class="fa-solid fa-location-dot"></i></a>
             </div>
 
             <!-- زر حفظ جهة الاتصال (VCard) -->
@@ -433,7 +393,7 @@ FN:Mohammed Fadi Sweid
 ORG:SWEID co.
 TEL;TYPE=CELL,VOICE:+963993316551
 TEL;TYPE=WORK,VOICE:+963993316550
-EMAIL;TYPE=WORK:sweid-co@gmail.com
+EMAIL;TYPE=WORK:sweid.co.sy@gmail.com
 ADR;TYPE=WORK:;;Industrial City (Sheikh Najjar) - Sector 3;Aleppo;;;Syria
 URL:https://www.facebook.com/share/1D28Hf1pSC/
 END:VCARD`;
